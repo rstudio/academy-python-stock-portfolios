@@ -1,0 +1,25 @@
+---
+title: Stock Index and Sector Analysis
+output: 
+  html_document: 
+    theme: cerulean
+    css: https://rsacdn.link/teachthis/css/style.css
+---
+
+This project uses Yahoo finance data on the top US stock indexes, Treasury Bill Yield indexes, and individual stocks in the S & P 500, retrieved with the tidyquant package.
+
+### Variables: `sectors.csv`
+
+`symbol` : Stock symbol
+
+`company` : Company name
+
+`identifier` : Company's identifier number
+
+`sedol` : Stock Exchange Daily Official List identifier
+
+`low` : Lowest traded price of the stock on the date (US dollars)
+
+`sector` : Industry sector
+
+`shares_held` : Shares held by the DJIA

@@ -1,0 +1,112 @@
+---
+title: "Python Basics"
+format: html
+---
+# Instructions
+
+Welcome to your first project milestone! 
+
+In this project, you will use Python to investigate real data related to [portfolio returns](https://rsacdn.link/milestones/internal/v2/python/stock-portfolios/assets/indexes_dictionary.html){target="_blank" rel="noopener noreferrer"}.
+
+The returns of stocks, indexes, and portfolios greatly fluctuate, which makes it hard for investors to assess the returns on their investment. We'd like you to be able to assemble your own portfolio and report on its performance compared to popular benchmarks. We'll split this project into milestones that build on each other to iteratively explore the data.
+
+## How to complete a milestone
+
+For each milestone, you will need to: 
+
+1. **Recreate a result,** like a plot, table, or model. This will require you to use the skills you have studied that week.
+
+2. **Extend the result.** This will require you to teach yourself something new from a help page, website, book, or the world at large. Being able to teach yourself new parts of a computer language is what will make you a truly competent open source programmer---and we are here to help. 
+
+You'll share your extension with your groupmates at the weekly meeting, and show them how they could do the same. 
+
+## The `indexes` data set 
+
+The data comes from Yahoo finance on the top US stock indexes, Treasury Bill Yield indexes, and individual stocks in the S&P 500, retrieved with the tidyquant R package.
+
+To learn more about the variables contained in the data set, refer to the data dictionary [here](https://rsacdn.link/milestones/internal/v2/python/stock-portfolios/assets/indexes_dictionary.html).
+
+# Milestone
+
+```{python}
+#| label: 'setup'
+
+# Import your packages here
+import pandas as pd
+
+# Set a display option so all columns of tables are displayed
+pd.set_option('display.max_columns', None)
+```
+
+## Python Basics
+
+In this milestone, you'll become familiar with the `indexes` data set. 
+
+## Recreation
+
+### Part 1
+
+Let's start by loading the data that we'll be using.
+
+Can you:
+
+- Run the setup chunk above, which will import pandas with the common alias, `pd`.
+- Use `help(pd.read_csv)` to explore the help page for the pandas `read_csv()` function.
+- Use `read_csv()` to load our data set, which is stored at `data/indexes.csv`.
+- Save the data set to a variable named `indexes`.
+
+```{python}
+#| label: 'recreation_1'
+
+```
+
+### Part 2
+
+Now that `indexes` is loaded, run the following code chunk, which will pull out the `date`, `symbol`, and `adjusted` columns and save them as variables to use later. 
+
+```{python}
+#| label: 'save_columns'
+
+# This code will probably look unfamiliar. Don't worry, we will cover this in next week's tutorials. 
+symbol = indexes['symbol']
+date = indexes['date']
+adjusted = indexes['adjusted']
+```
+
+
+### Part 3
+
+Use Python to explore our data:
+
+- Display the contents of `indexes`
+- Display the contents of the columns that we saved separately for you: `symbol`, `date`, and `adjusted`
+- Use the built-in `min()` function to find the first day in `date`
+- Use the built-in `max()` function to find the last day in `date`
+- Use the pandas `value_counts()` function to tally up the number of records for each symbol in the data set
+
+*Hint:* you may want to look up the help pages for each of these functions.
+
+Write your code in the following chunk:
+
+```{python}
+#| label: 'recreation_2'
+```
+
+## Extension
+
+Build on your work above, investigating something that interests you.
+
+Consider:
+1. Exploring `indexes` (or one of the columns) in a new way
+2. Using a function that is new to you, or something that you can learn from a help page
+3. Choosing a function from the `statistics` packages to explore the data
+4. Anything else
+
+**For your first extension, we encourage you to think small.** Throughout this course, you will build many skills to explore data; for this first week, your work will likely be fairly straightforward. Consider _limiting yourself to 30-45 minutes_ for this portion of your work; at the end of that time interval, stop working and make notes on your progress, dead-ends, and aspirations -- bringing those to your group for discussion during the milestone session.
+
+Write your extension code in the following chunk:
+
+```{python}
+#| label: 'extension'
+
+```

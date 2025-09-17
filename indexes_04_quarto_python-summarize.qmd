@@ -1,0 +1,121 @@
+---
+title: "Summarize data"
+format: html
+---
+# Instructions
+
+This week, you learned about several more pandas methods
+
+You'll use these skills to compute the Cumulative Annual Growth Rate (CAGR) for each index.
+
+To learn more about the variables contained in the data set, refer to the data dictionary [here](https://rsacdn.link/milestones/internal/v2/python/stock-portfolios/assets/indexes_dictionary.html).
+
+# Milestone
+
+```{python}
+#| label: 'setup'
+#| include: false
+
+# Import your packages here
+import pandas as pd
+from matplotlib import rcParams
+
+
+# Set some options
+pd.set_option('mode.copy_on_write', True) # Enables copy on write
+pd.set_option('display.max_columns', None) # Set a display option so all columns of tables are displayed
+rcParams.update({'savefig.bbox': 'tight'})
+```
+
+## Summarize data
+
+In this milestone you'll first create a plot to compare the price histories of each index. Then, use groupwise summaries to compute the Cumulative Annual Growth Rate (CAGR) for each index.
+
+## Recreation
+
+### Part 1 - Import
+
+Before you begin, you will need to import the data set that we created in the last milestone containing the names of indexes. Use the code chunk below to read the data from the data file `indexes_with_names.csv`, which is stored in the `data/` folder in your working directory. Be sure to save the data set to a variable names `indexes`.
+
+```{python}
+#| label: 'recreation-import'
+```
+
+### Part 2 - Visualize data
+
+Using the File Explorer on the left, navigate to the `images/` directory, then click on `milestone04.png` to open an image in the Editor pane
+
+Recreate the plot using `indexes` and plotnine functions in the chunk below.
+
+```{python}
+#| label: 'recreation-create'
+
+```
+
+### Compute CAGR
+
+Run the code below to compute the CAGR for one index (^GSPC).
+
+```{python}
+#| label: 'cagr_calculation'
+
+index = indexes.loc[indexes['symbol'] == '^GSPC']
+first = index['adjusted'].iloc[0]
+last = index['adjusted'].iloc[-1]
+CAGR = ((last / first) - 1) * 100
+```
+
+### Part 3 - Summarize data
+
+Now, you'll compute the CAGR as above for each index. Run the code below to see a table.
+
+```{python}
+#| label: 'solution'
+solution = pd.read_csv('data/milestone04.csv')
+solution
+```
+
+
+Your task is to use what you've learned about functions and grouped summaries to transform `indexes` into this table. You will need to:
+
+1. Adapt the CAGR calculation code above to write a function called `calc_cagr()` that takes a DataFrame as input and returns a CAGR value
+
+And then, once you have written `calc_cagr()`, you will need to:
+
+1. Group the data
+2. Apply `calc_cagr()` to the grouped data set to compute the Cumulative Annual Growth Rate (CAGR) for each index
+3. Reset the index
+4. Rename the new column `cagr` (*Hint* Use the syntax `columns={0:'cagr'}` when renaming this column)
+
+Work in the code chunk below. Save the result as `index_cagrs`.
+
+```{python}
+#| label: 'recreation-summary'
+
+```
+
+Run the following code chunk to test if your table matches the solution:
+```{python}
+#| label: 'compare'
+
+# If your answer is correct, the comparison should return an empty DataFrame.
+index_cagrs.round(10).compare(solution.round(10))
+
+# We rounded the values in both tables to avoid finding differences due to rounding error
+# from saving and re-opening the solution file. 
+
+```
+
+## Extension
+
+Use the code chunk(s) below to extend your work. Try something that you can learn from experimentation, a help page or a package website. Consider:
+
+1. Return to your summary table of CAGR values; add columns for 1-2 other variables you think may be important when considering CAGR.
+2. Data visualization is often an easier way to see patterns than numbers in a table. Build a graph from your summary table of CAGR values for each index and then add another relevant variable to your visualization. Alternately, create a separate visualization using your chosen variable.
+3. [any other research question of interest]
+
+
+```{python}
+#| label: 'extension'
+```
+

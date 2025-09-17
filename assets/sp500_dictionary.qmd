@@ -1,0 +1,21 @@
+---
+title: Stock Index and Sector Analysis
+output: 
+  html_document: 
+    theme: cerulean
+    css: https://rsacdn.link/teachthis/css/style.css
+---
+
+This project uses Yahoo finance data on the top US stock indexes, Treasury Bill Yield indexes, and individual stocks in the S & P 500, retrieved with the tidyquant package. This data set filters data only for the S&P 500. 
+
+### Variables: `sp500.csv`
+
+`symbol` : Stock symbol
+
+`date` : Trading day (YYYY-MM-DD)
+
+`event` : Variable indicating whether the reported price is opening, highest, lowest, closest, or adjusted price
+
+`price` : Traded price of the stock on the date (US dollars)
+
+

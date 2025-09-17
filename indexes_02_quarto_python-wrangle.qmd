@@ -1,0 +1,129 @@
+---
+title: "Wrangle rows and columns"
+format: html
+---
+# Instructions
+
+This week, you learned about several more pandas methods and attributes. 
+These functions help you work with the columns in your data set.
+
+You'll use these skills to first add a new column to the data set, the daily return for each index, and then investigate if the indexes display the same pattern of returns across time. 
+
+To learn more about the variables contained in the data set, refer to the data dictionary [here](https://rsacdn.link/milestones/internal/v2/python/stock-portfolios/assets/indexes_dictionary.html).
+
+# Milestone
+
+```{python}
+#| label: 'setup'
+#| include: false
+
+# Import your packages here
+import pandas as pd
+from matplotlib import rcParams
+
+# Set some options
+pd.set_option('mode.copy_on_write', True) # Enables copy on write
+pd.set_option('display.max_columns', None) # Set a display option so all columns of tables are displayed
+rcParams.update({'savefig.bbox': 'tight'}) # Keeps plotnine legend from being cut off
+```
+
+## Wrangle rows and columns
+
+It is hard to compare performance across indexes by looking at prices. In this milestone, you'll create a new variable that shows the daily return of each index. You'll then plot the cumulative returns over time.
+
+## Recreation
+
+### Part 1 - Import
+
+Before you begin, you will need to import your data set. Use the code chunk below to read the data from the data file `indexes.csv`, which is stored in the `data/` folder in your working directory. Be sure to save the data set to a variable named `indexes`.
+
+```{python}
+#| label: 'recreation-import'
+```
+
+### Part 2 - Create and Summarize
+
+Run the code below to see a table.
+
+```{python}
+#| label: 'recreate-this'
+#| message: false
+
+solution = pd.read_csv('data/milestone02.csv')
+solution
+```
+
+Your task is to use what you've learned to transform `indexes` into this table. You will need to:
+
+1. Create a DataFrame called `index` to work with in the following steps. `index` should contain the rows of `indexes` where the symbol is `'^GSPC'`.
+2. Create a new column called `lag` that contains the values in the previous row of the `adjusted` column. You can use a method called `.shift()` to get the previous values.
+3. Create a new column named `daily_return`, which computes returns based on the formula: `1 + ((adjusted - lag) / lag)`.
+4. Replace all NaN values in `daily_return` with `1` using the `.fillna()` method.
+5. Create a new column named `growth` that stores the cumulative returns using the `.cumprod()` method on the `daily_return` column
+6. Drop the `lag` column, as it is no longer needed.
+
+Work in the code chunk below. 
+
+```{python}
+#| label: 'recreation-create'
+
+```
+
+Run the following code chunk to test whether your table has the same dimensions as the solution:
+
+```{python}
+#| label: 'compare_shape'
+
+# The result will be `True` if the dimensions are the same
+solution.shape == index.shape 
+
+```
+
+Run the following code chunk to test whether your table matches the solution:
+```{python}
+#| label: 'compare'
+
+# If the dimensions don't match, then it will produce an error. 
+# If the dimensions match, it'll show a table of deviations between the two tables. 
+index.round(10).compare(solution.round(10))
+
+# We rounded the values in both tables to avoid finding differences due to rounding error
+# from saving a re-opening the solution file. 
+
+# If your answer is correct, the comparison should return an empty DataFrame.
+```
+
+### Part 3 - Visualize
+
+Using the File Explorer on the left, navigate to the `images/` directory, then click on `milestone02.png` to open an image in the Editor pane
+
+Your task is to recreate this plot using `index`.
+
+Use the chunk below to recreate this plot.
+
+Hint: if you are having trouble with `geom_line()`, try setting the `group` argument to `1`. This will ensure that all points are part of the same group (i.e. line). 
+
+```{python}
+#| label: 'recreation-visualize'
+
+```
+
+## Extension
+
+Using the code chunk below, investigate a research question about this data, using the additional data wrangling skills you learned this week. Some ideas:
+
+1. Do different indexes display similar patterns of returns over time? How do daily and cumulative returns vary across indexes?
+2. Based on cumulative growth, price, or volume, divide this data into groups of your choosing (e.g. low/medium/high, above/below a group average, etc.) and explore patterns in other variables based on these groups.
+3. [any other research question of interest]
+
+Alternately, working with a data set of your own, complete the following:
+
+1. Read in your data
+2. Create at least one new variable in your data set using mathematical operations
+3. Use your updated data set to create at least one graph and/or table
+
+```{python}
+#| label: 'extension'
+
+```
+

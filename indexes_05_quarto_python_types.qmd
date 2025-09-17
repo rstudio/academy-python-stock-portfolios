@@ -1,0 +1,203 @@
+---
+title: "Data types"
+format: html
+---
+# Instructions
+
+This week, you learned about three data types in pandas -- strings, datetimes, and categoricals.
+
+In this milestone, you'll plot the CAGRs for each index and sector we've examined in a single plot, ordered from largest CAGR to smallest.
+
+To learn more about the variables contained in the data set, refer to the data dictionary [here](https://rsacdn.link/milestones/internal/v2/python/stock-portfolios/assets/indexes_dictionary.html).
+
+# Milestone
+
+```{python}
+#| label: 'setup'
+#| include: false
+
+# Import your packages here
+import pandas as pd
+from matplotlib import rcParams
+from plotnine import ggplot, aes, geom_col, coord_flip, labs
+
+
+# Set some options
+pd.set_option('display.max_columns', None) # Set a display option so all columns of tables are displayed
+pd.set_option('mode.copy_on_write', True) # Enables copy on write
+rcParams.update({'savefig.bbox': 'tight'}) # Keeps plotnine legend from being cut off
+```
+
+## Data types
+
+In this milestone, you'll use a sorted categorical variable to plot the CAGRs for each index and sector we've examined in a single plot ordered from largest CAGR to smallest.
+
+## Recreation
+
+### Part 1 - Import
+
+Before you begin, you will need to import your data sets. Use the code chunk below to read three data sets from the `data/` directory:
+
+1. `indexes.csv`, save it as `indexes`
+2. `sp500.csv`, save it as `sp500`
+3. `sectors.csv`, save it as `sectors`
+
+```{python}
+#| label: 'recreation-import'
+
+```
+
+### Part 2 - Prepare the data
+
+Run the two code chunks below to prepare the data, re-using code from previous milestones. 
+Pay attention to the comments in the code to follow along.
+
+```{python}
+#| label: 'define-functions'
+
+# Recodes six stock index symbols to their full names
+def recode_symbol(symbol):
+  if (symbol == '^DJI'):
+    return 'Dow Jones'
+  if (symbol == '^FVX'):
+    return '5 Year Treasury'
+  if (symbol == '^GSPC'):
+    return 'S&P 500'
+  if (symbol == '^IRX'):
+    return '13 Week Treasury'
+  if (symbol == '^IXIC'):
+    return 'NASDAQ'
+  if (symbol == '^TNX'):
+    return '10 Year Treasury'
+  else:
+    return None
+  
+# Adds a new column containing the cumulative annual growth rate (CAGR)
+def calc_CAGR(df):
+  first = df['adjusted'].iloc[0]
+  last = df['adjusted'].iloc[-1]
+  CAGR = ((last / first) - 1) * 100
+  return CAGR
+
+```
+
+```{python}
+#| label: 'transform-data'
+
+# recode index symbols to their human-readable names
+indexes['name'] = indexes['symbol'].apply(recode_symbol)
+
+# calculate the CAGR for each index
+index_cagrs = (indexes
+  .groupby('name')
+  .apply(calc_CAGR)
+  .reset_index()
+  .rename(columns={0:'cagr'})
+)
+
+# join tables together to create a dataset that contains daily prices for every stock in the S&P 500
+sector_prices = (sp500
+  .merge(sectors, on='symbol', how='left')
+  .groupby(['sector', 'date'])
+  .agg({
+    'adjusted': 'sum'})
+  .reset_index()
+)
+
+# calculate the CAGR for each sector
+sector_cagrs = (sector_prices
+  .groupby('sector')
+  .apply(calc_CAGR)
+  .reset_index()
+  .rename(columns={0:'cagr'})
+)
+```
+
+### Part 3 - Combine the tables
+
+Run the code below to see a table.
+
+```{python}
+#| label: 'recreate-this'
+solution = pd.read_csv('data/milestone05.csv')
+solution
+```
+
+Your task is to use what you've learned to transform `sector_cagrs` and `index_cagrs` into this table. You will need to:
+
+1. Rename the "sector" column in `sector_cagrs` to "name"
+2. Use the pandas `concat()` function to create a new table called `cagrs` that contains the rows from `index_cagrs` and `sector_cagrs`
+3. Use the `ignore_index` argument to relabel the index of the new table from 0 to 16
+
+Work in the code chunk below. Save the result as `cagrs`; we will use it in Part 4.
+
+```{python recreation-seasons}
+#| label: 'recreation-combine'
+
+```
+
+Run the following code chunk to test if you have the same answer as the solution:
+
+```{python compare}
+#| label: 'compare'
+
+# If your answer is correct, the comparison should return an empty DataFrame.
+cagrs.round(10).compare(solution.round(10))
+
+```
+
+### Part 4 - Visualization
+
+#### The role of order in visualizations
+
+Run the chunk below to visualize the data of `cagrs`.
+
+```{python}
+#| label: 'summary-plot'
+ggplot.show(
+  ggplot(cagrs, aes(y='cagr', x='name'))
+  + geom_col()
+  + coord_flip()
+  + labs(x='Name', y='CAGR')
+)
+```
+
+This is a nice plot, but the order of symbols on the y axis is arbitrary (alphabetical). We may want to give the symbols a more principled order before we publish this plot.
+
+#### Your turn : visualization
+
+Using the File Explorer on the left, navigate to the `images/` directory, then click on `milestone05.png` to open an image in the Editor pane
+
+Your task is to recreate this plot. Notice that the symbols are now ordered from largest CAGR to smallest.
+
+We recommend that you:
+
+1. Use `.sort_values()` to sort `cagr` according to the values in the `cagr` column and then create a Series called `name_order` containing the associated names.
+2. Use the values saved in `name_order` to add a sorted, Categorical column to `cagrs` called `name_cat`. _Hint:_ Use the function `pd.Categorical()`
+3. Use the new `name_cat` column to recreate the plot. 
+
+```{python}
+#| label: 'recreation-visualize-1'
+
+```
+
+## Extension
+
+Using the code chunk below, investigate a research question about this data, using the skills you have learned this week and in previous weeks of Academy. Some ideas:
+
+1. Use data visualization to investigate if there seems to be a trend in stock value (variable of your choosing) _within the year_ - for all indices, certain sectors, or focal companies within a sector.
+2. Is there a _quarterly_ pattern for stock returns? Does this change if you focus on certain indices, sectors, or companies within a sector?
+3. Looking _within_ a month, do you see patterns in returns, open/close price, high/low value, or volume? Do these patterns map to day of the week? If you look across months, do patterns emerge by day of the month?
+4. [any other research question of interest]
+
+Alternately, working with a data set of your own, complete the following:
+
+1. Read in your data
+2. If your data set contains date, string, or categorical information, use a pandas function to correctly format and manipulate your variables.
+3. Using a table or graph, present a meaningful subset of your modified data
+
+
+```{python}
+#| label: 'extension'
+
+```
