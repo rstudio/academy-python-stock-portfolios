@@ -26,7 +26,7 @@ Note: `uv sync` uses uv, a popular Python package manager, to install Python pac
 
 **Step 2: Open your first milestone file.**
 
-1. In the Explorer tab on the left, open the file `indexes_01_quarto_python-basics.qmd`
+1. In the Explorer tab on the left, open the file `indexes_01_quarto_python-intro.qmd`
 
 2. Follow the instructions in this file to complete the exercises
 
@@ -36,6 +36,6 @@ Once you have set up your project in Positron, you will have access to all of th
 
 Milestone files are numbered sequentially according to the week of the course. For example:
 
-Week 1 = `indexes_01_quarto_python-basics.qmd`  
+Week 1 = `indexes_01_quarto_python-intro.qmd`  
 Week 2 = `indexes_02_quarto_python-wrangle.qmd`  
 etc.
