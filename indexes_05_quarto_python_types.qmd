@@ -8,7 +8,7 @@ This week, you learned about three data types in pandas -- strings, datetimes, a
 
 In this milestone, you'll plot the CAGRs for each index and sector we've examined in a single plot, ordered from largest CAGR to smallest.
 
-To learn more about the variables contained in the data set, refer to the data dictionary [here](https://rsacdn.link/milestones/internal/v2/python/stock-portfolios/assets/indexes_dictionary.html).
+To learn more about the variables contained in the data set, refer to the data dictionary [here](https://rstudio.github.io/academy-python-stock-portfolios/assets/indexes_dictionary.html).
 
 # Milestone
 

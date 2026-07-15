@@ -12,7 +12,7 @@ For this final milestone, apply what you have learned about data transformation 
 3. Create a simple regression model and inspect your model results
 
 To learn more about the variables contained in the data set, refer to the data dictionary
-[here](https://rsacdn.link/milestones/internal/v2/python/stock-portfolios/assets/indexes_dictionary.html).
+[here](https://rstudio.github.io/academy-python-stock-portfolios/assets/indexes_dictionary.html).
 
 
 # Milestone

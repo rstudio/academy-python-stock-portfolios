@@ -8,7 +8,7 @@ This week, you learned how to write and apply your own functions.
 
 You'll use these skills to add a columns that recodes stock index symbol into their full names. 
 
-To learn more about the variables contained in the data set, refer to the data dictionary [here](https://rsacdn.link/milestones/internal/v2/python/stock-portfolios/assets/indexes_dictionary.html).
+To learn more about the variables contained in the data set, refer to the data dictionary [here](https://rstudio.github.io/academy-python-stock-portfolios/assets/indexes_dictionary.html).
 
 # Milestone
 

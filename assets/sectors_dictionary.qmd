@@ -1,9 +1,8 @@
 ---
 title: Stock Index and Sector Analysis
-output: 
-  html_document: 
-    theme: cerulean
-    css: https://rsacdn.link/teachthis/css/style.css
+format:
+  html:
+    embed-resources: true
 ---
 
 This project uses Yahoo finance data on the top US stock indexes, Treasury Bill Yield indexes, and individual stocks in the S & P 500, retrieved with the tidyquant package.
