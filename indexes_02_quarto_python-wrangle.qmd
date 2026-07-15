@@ -9,7 +9,7 @@ These functions help you work with the columns in your data set.
 
 You'll use these skills to first add a new column to the data set, the daily return for each index, and then investigate if the indexes display the same pattern of returns across time. 
 
-To learn more about the variables contained in the data set, refer to the data dictionary [here](https://rsacdn.link/milestones/internal/v2/python/stock-portfolios/assets/indexes_dictionary.html).
+To learn more about the variables contained in the data set, refer to the data dictionary [here](https://rstudio.github.io/academy-python-stock-portfolios/assets/indexes_dictionary.html).
 
 # Milestone
 

@@ -6,7 +6,7 @@ format: html
 
 Welcome to your first project milestone! 
 
-In this project, you will use Python to investigate real data related to [portfolio returns](https://rsacdn.link/milestones/internal/v2/python/stock-portfolios/assets/indexes_dictionary.html){target="_blank" rel="noopener noreferrer"}.
+In this project, you will use Python to investigate real data related to [portfolio returns](https://rstudio.github.io/academy-python-stock-portfolios/assets/indexes_dictionary.html){target="_blank" rel="noopener noreferrer"}.
 
 The returns of stocks, indexes, and portfolios greatly fluctuate, which makes it hard for investors to assess the returns on their investment. We'd like you to be able to assemble your own portfolio and report on its performance compared to popular benchmarks. We'll split this project into milestones that build on each other to iteratively explore the data.
 
@@ -24,7 +24,7 @@ You'll share your extension with your groupmates at the weekly meeting, and show
 
 The data comes from Yahoo finance on the top US stock indexes, Treasury Bill Yield indexes, and individual stocks in the S&P 500, retrieved with the tidyquant R package.
 
-To learn more about the variables contained in the data set, refer to the data dictionary [here](https://rsacdn.link/milestones/internal/v2/python/stock-portfolios/assets/indexes_dictionary.html).
+To learn more about the variables contained in the data set, refer to the data dictionary [here](https://rstudio.github.io/academy-python-stock-portfolios/assets/indexes_dictionary.html).
 
 # Milestone
 
