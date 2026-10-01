@@ -69,20 +69,19 @@ CAGR = ((last / first) - 1) * 100
 Now, you'll compute the CAGR as above for each index. Run the code below to see a table.
 
 ```{python}
-#| label: 'solution'
+#| label: 'recreate-this'
 solution = pd.read_csv('data/milestone04.csv')
 solution
 ```
 
-
 Your task is to use what you've learned about functions and grouped summaries to transform `indexes` into this table. You will need to:
 
-1. Adapt the CAGR calculation code above to write a function called `calc_cagr()` that takes a DataFrame as input and returns a CAGR value
+1. Adapt the CAGR calculation code above to write a function called `calc_CAGR()` that takes a DataFrame as input and returns a CAGR value
 
-And then, once you have written `calc_cagr()`, you will need to:
+And then, once you have written `calc_CAGR()`, you will need to:
 
 1. Group the data
-2. Apply `calc_cagr()` to the grouped data set to compute the Cumulative Annual Growth Rate (CAGR) for each index
+2. Apply `calc_CAGR()` to the grouped data set to compute the Cumulative Annual Growth Rate (CAGR) for each index
 3. Reset the index
 4. Rename the new column `cagr` (*Hint* Use the syntax `columns={0:'cagr'}` when renaming this column)
 
@@ -113,8 +112,6 @@ Use the code chunk(s) below to extend your work. Try something that you can lear
 2. Data visualization is often an easier way to see patterns than numbers in a table. Build a graph from your summary table of CAGR values for each index and then add another relevant variable to your visualization. Alternately, create a separate visualization using your chosen variable.
 3. [any other research question of interest]
 
-
 ```{python}
 #| label: 'extension'
 ```
-

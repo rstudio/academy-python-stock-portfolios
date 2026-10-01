@@ -7,7 +7,7 @@ format: html
 
 For this final milestone, showcase your project by creating a Quarto report in one of the following formats:
 
-* HTML report: https://quarto.org/docs/output-formats/html-basics (possibly with parameters: https://quarto.org/docs/computations/parameters.html)
+* HTML report: https://quarto.org/docs/output-formats/html-basics.html (possibly with parameters: https://quarto.org/docs/computations/parameters.html)
 * Slideshow: https://quarto.org/docs/presentations/revealjs/
 * Dashboard: https://quarto.org/docs/dashboards/
 
@@ -16,7 +16,7 @@ Your report should bring together code from previous milestones (add new code if
 a) the project data (via your project-based extensions) or 
 b) your own data (if you have worked with your own data in extensions)
 
-When you're done, publish your report to Posit Connect to share with your teammates. The link for publishing to Connect will automatically be populated for you during the publishing process. (You can find that link in the Publish step of the Connect publishing interface.) See here for an overview of how to publish to Connect: https://docs.posit.co/connect/user/publishing-rstudio/
+When you're done, publish your report to Posit Connect to share with your teammates. The link for publishing to Connect will automatically be populated for you during the publishing process. (You can find that link in the Publish step of the Connect publishing interface.) See here for an overview of how to publish to Connect: https://positron.posit.co/publish-to-connect.html
 
 As you work on this milestone, you may want to refer to the following pages from the Quarto docs:
 
@@ -39,7 +39,6 @@ from matplotlib import rcParams
 pd.set_option('display.max_columns', None)
 rcParams.update({'savefig.bbox': 'tight'}) # Keeps plotnine legend from being cut off
 ```
-
 
 ## Report and publish
 

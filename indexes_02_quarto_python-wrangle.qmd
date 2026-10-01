@@ -24,6 +24,7 @@ from matplotlib import rcParams
 # Set some options
 pd.set_option('display.max_columns', None) # Set a display option so all columns of tables are displayed
 rcParams.update({'savefig.bbox': 'tight'}) # Keeps plotnine legend from being cut off
+
 ```
 
 ## Wrangle rows and columns
@@ -125,4 +126,3 @@ Alternately, working with a data set of your own, complete the following:
 #| label: 'extension'
 
 ```
-

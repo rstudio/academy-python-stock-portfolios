@@ -11,13 +11,12 @@ Use at least three related graphs to investigate a variable (or variables) of in
 
 Alternatively, return to a previous milestone and produce a publication-quality table or graph using the skills you have learned this week. Some ideas:
 
-1. Choose a data visualization from earlier in this course and further customize your graph using using themes, annotations, labels and/or aesthetics
+1. Choose a data visualization from earlier in this course and further customize your graph using themes, annotations, labels and/or aesthetics
 
-2. Create a table, or choose a table you created earlier in this course, and use GreatTables to build the table into an effective standalone figure, including colored cells and a footnote
+2. Create a table, or choose a table you created earlier in this course, and use Great Tables to build the table into an effective standalone figure, including colored cells and a footnote
 
 To learn more about the variables contained in the data set, refer to the data dictionary
 [here](https://rstudio.github.io/academy-python-stock-portfolios/assets/indexes_dictionary.html).
-
 
 # Milestone
 
