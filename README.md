@@ -16,15 +16,31 @@ This folder contains materials for your Posit Academy course project. You will c
 
 ## Getting Started
 
-**Step 1**: Install Python packages you will need for this project:
+If Positron shows a **Restricted Mode** banner when you open this folder, click **Trust this folder** in the Console, then click **Trust**.
 
-1. Open your Terminal tab (just to to right of your Console tab).
+**Step 1: Install the Python packages you will need for this project.**
 
-2. Run `uv sync` in your Terminal (this may take several minutes to complete)
+1. Open the **Terminal** tab (just to the right of the **Console** tab).
 
-Note: `uv sync` uses uv, a popular Python package manager, to install Python packages included in the `uv.lock` file. You will see output in the Console indicating that Python packages are being installed. Wait for this to complete before proceeding.
+2. Copy and paste this command into the Terminal and press <kbd>Enter</kbd>:
 
-**Step 2: Open your first milestone file.**
+   ```bash
+   uv venv --allow-existing && uv pip install jupyter pandas palmerpenguins plotnine scikit-learn statsmodels
+   ```
+
+   This uses [uv](https://docs.astral.sh/uv/), a fast Python package manager, to create a virtual environment (a `.venv` folder in this project) and install the packages into it. It may take a few minutes to complete.
+
+**Step 2: Tell Positron to use your project's Python environment.**
+
+1. Click the interpreter button in the top right corner of Positron. It shows **Start Session**, or the name of a Python or R version. (If a menu of running sessions opens, click **New Console Session...** first.)
+
+2. Select the Python whose name ends in **(uv: academy-python-stock-portfolios)**. Its path ends in `.venv/bin/python`.
+
+You only need to do this once. The next time you open this project, Positron starts its environment automatically.
+
+For step-by-step instructions with screenshots, see the **Set Up Your Project** tutorial on your course site.
+
+**Step 3: Open your first milestone file.**
 
 1. In the Explorer tab on the left, open the file `indexes_01_quarto_python-intro.qmd`
 

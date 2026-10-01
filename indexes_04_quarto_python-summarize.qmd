@@ -22,7 +22,6 @@ from matplotlib import rcParams
 
 
 # Set some options
-pd.set_option('mode.copy_on_write', True) # Enables copy on write
 pd.set_option('display.max_columns', None) # Set a display option so all columns of tables are displayed
 rcParams.update({'savefig.bbox': 'tight'})
 ```

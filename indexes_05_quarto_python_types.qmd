@@ -24,7 +24,6 @@ from plotnine import ggplot, aes, geom_col, coord_flip, labs
 
 # Set some options
 pd.set_option('display.max_columns', None) # Set a display option so all columns of tables are displayed
-pd.set_option('mode.copy_on_write', True) # Enables copy on write
 rcParams.update({'savefig.bbox': 'tight'}) # Keeps plotnine legend from being cut off
 ```
 
