@@ -14,7 +14,6 @@ For this final milestone, apply what you have learned about data transformation 
 To learn more about the variables contained in the data set, refer to the data dictionary
 [here](https://rstudio.github.io/academy-python-stock-portfolios/assets/indexes_dictionary.html).
 
-
 # Milestone
 
 ```{python}

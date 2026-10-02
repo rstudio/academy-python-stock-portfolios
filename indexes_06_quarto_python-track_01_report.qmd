@@ -7,7 +7,7 @@ format: html
 
 For this final milestone, showcase your project by creating a Quarto report in one of the following formats:
 
-* HTML report: https://quarto.org/docs/output-formats/html-basics (possibly with parameters: https://quarto.org/docs/computations/parameters.html)
+* HTML report: https://quarto.org/docs/output-formats/html-basics.html (possibly with parameters: https://quarto.org/docs/computations/parameters.html)
 * Slideshow: https://quarto.org/docs/presentations/revealjs/
 * Dashboard: https://quarto.org/docs/dashboards/
 
@@ -39,7 +39,6 @@ from matplotlib import rcParams
 pd.set_option('display.max_columns', None)
 rcParams.update({'savefig.bbox': 'tight'}) # Keeps plotnine legend from being cut off
 ```
-
 
 ## Report and publish
 

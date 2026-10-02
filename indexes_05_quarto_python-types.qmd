@@ -130,14 +130,14 @@ Your task is to use what you've learned to transform `sector_cagrs` and `index_c
 
 Work in the code chunk below. Save the result as `cagrs`; we will use it in Part 4.
 
-```{python recreation-seasons}
+```{python}
 #| label: 'recreation-combine'
 
 ```
 
 Run the following code chunk to test if you have the same answer as the solution:
 
-```{python compare}
+```{python}
 #| label: 'compare'
 
 # If your answer is correct, the comparison should return an empty DataFrame.
@@ -194,7 +194,6 @@ Alternately, working with a data set of your own, complete the following:
 1. Read in your data
 2. If your data set contains date, string, or categorical information, use a pandas function to correctly format and manipulate your variables.
 3. Using a table or graph, present a meaningful subset of your modified data
-
 
 ```{python}
 #| label: 'extension'

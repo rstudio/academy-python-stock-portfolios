@@ -6,7 +6,7 @@ format: html
 
 Welcome to your first project milestone! 
 
-In this project, you will use Python to investigate real data related to [portfolio returns](https://rstudio.github.io/academy-python-stock-portfolios/assets/indexes_dictionary.html){target="_blank" rel="noopener noreferrer"}.
+In this project, you will use Python to investigate real data related to [portfolio returns](https://rstudio.github.io/academy-python-stock-portfolios/assets/indexes_dictionary.html).
 
 The returns of stocks, indexes, and portfolios greatly fluctuate, which makes it hard for investors to assess the returns on their investment. We'd like you to be able to assemble your own portfolio and report on its performance compared to popular benchmarks. We'll split this project into milestones that build on each other to iteratively explore the data.
 
@@ -72,7 +72,6 @@ symbol = indexes['symbol']
 date = indexes['date']
 adjusted = indexes['adjusted']
 ```
-
 
 ### Part 3
 
