@@ -32,9 +32,9 @@ If Positron shows a **Restricted Mode** banner when you open this folder, click 
 
 **Step 2: Tell Positron to use your project's Python environment.**
 
-1. Click the interpreter button in the top right corner of Positron. It shows **Start Session**, or the name of a Python version. (If a menu of running sessions opens, click **New Console Session...** first.)
+1. Click the interpreter button in the top right corner of Positron. It shows **Start Session**, or the name of a Python or R version. (If a menu of running sessions opens, click **New Console Session...** first.)
 
-2. Select the Python whose name ends in **(uv: academy-python-stock-portfolios)**. Its path ends in `.venv/bin/python`.
+2. Select the Python whose name ends in **(uv: academy-python-stock-portfolios)**. Its path ends in `.venv/bin/python`. It may not be at the top of the list; the **(Global)** Pythons don't have your packages.
 
 You only need to do this once. The next time you open this project, Positron starts its environment automatically.
 

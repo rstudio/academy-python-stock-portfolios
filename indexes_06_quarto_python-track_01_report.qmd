@@ -16,7 +16,7 @@ Your report should bring together code from previous milestones (add new code if
 a) the project data (via your project-based extensions) or 
 b) your own data (if you have worked with your own data in extensions)
 
-When you're done, publish your report to Posit Connect to share with your teammates. The link for publishing to Connect will automatically be populated for you during the publishing process. (You can find that link in the Publish step of the Connect publishing interface.) See here for an overview of how to publish to Connect: https://positron.posit.co/publish-to-connect.html
+When you're done, publish your report to Posit Connect Cloud to share with your teammates. The **Publish to Posit Connect Cloud** tutorial on your course site walks you through it, including how to get a public link to share. See here for an overview of publishing to Connect Cloud: https://docs.posit.co/connect-cloud/
 
 As you work on this milestone, you may want to refer to the following pages from the Quarto docs:
 
